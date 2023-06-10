@@ -1,0 +1,98 @@
+<div>
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <div>
+        <em>{{birthdate}}</em>
+
+    </div>
+    <div>
+        <em>{{birthplace}}</em>
+    </div>
+    <div>
+        <em>{{deathdate}}</em>
+    </div>
+    <div>
+        <address>{{deathplace}}</address>
+    </div>
+    <div>
+        <em>{{nationality}}</em>
+
+    </div>
+    <div>
+        <em>{{occupation}}</em>
+    </div>
+    <hr>
+    <div>
+        {{#each known_for}}
+        {{this}}
+        {{/each}}
+    </div>
+    <div>
+        {{#each education}}
+        {{degree}}, {{field}}, {{institution}}, {{year}}
+        {{/each}}
+    </div>
+    <br>
+    <div>
+        {{#each notable_publications}}
+        {{title}} {{year}} {{publisher}}
+        {{/each}}
+    </div>
+    <div>
+        <ol>
+            {{#each partners}}
+            <li>{{name}}, {{relationship}}, {{years}}</li>
+            {{/each}}
+        </ol>
+        <div>
+            <ul>
+                {{#each awards}}
+                <li>{{title}}</li>
+                <li>{{year}}</li>
+                <q>{{description}}</q>
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <ol>
+                {{#each influenced}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ol>
+        </div>
+        <div>
+            {{#each quotes}}
+            <li>{{this}}</li>
+            {{/each}}
+        </div>
+        <hr>
+        <div>
+            {{#each major_discoveries}}
+            <b>{{title}}</b>
+            <div>
+                <em>{{year}}</em>
+            </div>
+            <div>
+                <q>{{description}}</q>
+            </div>
+            {{/each}}
+
+        </div>
+        <hr>
+        <div>
+            {{#with contributions}}
+            <b>{{title}}</b>
+            <div>
+                <q>{{description}}</q>
+            </div>
+            <div>
+                <em>{{year}}</em>
+            </div>
+            <em>{{field}}</em>
+            {{/with}}
+        </div>
+    </div>
+
+
+</div>
