@@ -1,0 +1,101 @@
+<div>
+    {{#with program}}
+    <h1>{{excursion.name}}</h1>
+    <div>
+        {{#with excursion}}
+        <strong>{{location.city}}, {{location.country}}</strong>
+        <div>
+            <b>{{date}}</b>
+        </div>
+        <hr>
+
+        <div>
+            <em>
+                <strong>{{program.[0].name}}</strong>
+            </em>
+        </div>
+        <div>
+            <ul>
+                <li>{{program.[0].type}}</li>
+                <li>{{program.[0].duration}}(hours)</li>
+            </ul>
+        </div>
+        {{#each program}}
+
+        {{#with details}}
+        {{#with museum}}
+        <b>Musem - {{name}}</b>
+
+        <div>
+            {{#with location}}
+            <address>{{address}}, {{city}}, {{country}}</address>
+            {{/with}}
+        </div>
+        <section>
+            <div>
+                {{#each exhibits}}
+                <b>
+                    <ol>
+                        <li>{{name}}</li>
+                    </ol>
+                </b>
+                <em>{{artist}} ({{description}})</em>
+                {{#if audio_guide}} (аудіогід в наявності) {{/if}}
+                {{#unless artist}} (артист відсутній) {{/unless}}
+                {{/each}}
+            </div>
+        </section>
+        {{/with}}
+        {{/with}}
+
+        {{#with details.guide}}
+
+        <p><i>Guide-</i><b>{{name}}</b>(language - {{language}})/rating - {{rating}}</p>
+
+        {{/with}}
+
+        {{/each}}
+        <br>
+        <div>
+            <em>
+                <strong>{{program.[1].name}}</strong>
+            </em>
+        </div>
+        <div>
+            <ul>
+                <li>{{program.[1].type}}</li>
+                <li>{{program.[1].duration}} (hours)</li>
+            </ul>
+        </div>
+        <div>
+            {{#each program}}
+        </div>
+        <div>
+            {{#with details}}
+            {{#with venue}}
+            <b>Venue - {{name}}</b>
+        </div>
+        <div>
+            {{#with location}}
+            <address>{{address}}, {{city}}, {{country}}</address>
+            {{/with}}
+        </div>
+        {{/with}}
+        <div>
+            <ol>
+                {{#each performers}}
+                <li><b>{{name}}</b> ({{type}})</li>
+                {{/each}}
+            </ol>
+        </div>
+
+        {{/with}}
+
+        {{/each}}
+
+
+
+
+        {{/with}}
+        {{/with}}
+    </div>
