@@ -1,0 +1,191 @@
+<div>
+    <h1>{{make}}-{{model}}</h1>
+    <b><i>{{year}}, Color:{{color}}</i></b>
+    <div>
+        <hr>
+        <br>
+        <b>Features</b>
+        <br>
+        <br>
+        <div>
+            {{#with features}}
+
+            <div>
+                <div>
+                    <b>Interior:</b>
+                    {{#with interior}}
+                    {{#with seats}}
+                    Seats-{{material}},{{color}},
+                    {{#if heated}}
+                    heated (в наявності),
+                    {{/if}}
+                    {{#if ventilated}}
+                    ventilated (в наявнасті)
+                    {{/if}}
+                    {{/with}}
+                </div>
+                <div>
+                    <b>Dashboard:</b>
+                    {{#with dashboard}}
+                    {{material}}, {{color}}
+                    <div>
+                        <b>Display:</b>
+                        {{#with display}}
+                        {{type}}-{{size}}, {{resolution}},
+
+                        {{#if touchscreen}}
+                        touchscreen (в наявності)
+                        {{/if}}
+
+                        {{/with}}
+                    </div>
+                    {{/with}}
+                    <div>
+                        <b>Audio:</b>
+                        {{#with audio}}
+                        {{system}}-{{speakers}},
+                        {{#if subwoofer}}
+                        subwoofer (в наявності),
+                        {{/if}}
+                        {{#if bluetooth}}
+                        bluetooth (в наявності),
+                        {{/if}}
+                        {{#if bluetooth}}
+                        USB (в наявності)
+                        {{/if}}
+
+                        {{/with}}
+                    </div>
+
+                </div>
+            </div>
+
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            <b>Exterior</b>
+        </div>
+        <br>
+        <b>Wheels:</b>
+        {{#with exterior}}
+        {{#with wheels}}
+        {{size}}, {{type}},{{color}}
+        {{/with}}
+        <div>
+            <b>Headlights:</b>
+            {{#with headlights}}
+            {{type}}, {{brightness}},
+            {{#if automatic}}
+            automatic (в наявності)
+            {{/if}}
+
+            {{/with}}
+            <div>
+                <b>Sunroof:</b>
+                {{#with sunroof}}
+                {{type}}, {{size}},
+                {{#if automatic}}
+                automatic (в наявності)
+                {{/if}}
+
+                {{/with}}
+            </div>
+        </div>
+        <br>
+
+        {{/with}}
+
+        <div>
+            <b>Safety</b>
+        </div>
+        <div>
+            <b>Airbags:</b>
+            {{#with safety}}
+            <ul>
+                {{#with airbags}}
+                <li>Front-{{front}}</li>
+                <li>Side-{{side}}</li>
+                <li>Knee-{{knee}}</li>
+                <li>Rear-{{rear}}</li>
+                {{/with}}
+            </ul>
+            <b>Assistance</b>
+            <div>
+                <ol>
+                    {{#if assistance}}
+                    <li>blind_spot_monitoring (в наявності)</li>
+                    <li>rear_cross_traffic_alert (в наявності)</li>
+                    <li>lane_departure_warning (в наявності)</li>
+                    <li>adaptive_cruise_control (в наявності)</li>
+                    <li>collision_warning (в наявності)</li>
+                    {{/if}}
+                </ol>
+            </div>
+
+            {{/with}}
+        </div>
+
+
+        {{/with}}
+
+        <div>
+            <b>Engine</b>
+        </div>
+        <div>
+            {{#with engine}}
+            <li>Type - {{type}}</li>
+            <li>Displacement - {{displacement}}</li>
+            <li>Horsepower - {{horsepower}}</li>
+            <li>Torque - {{torque}}</li>
+        </div>
+        <br>
+        <div>
+            <b>Transmission</b>
+            <div>
+                {{#with transmission}}
+                <li>Type - {{type}}</li>
+                <li>Gears - {{gears}}</li>
+
+                {{/with}}
+            </div>
+        </div>
+        {{/with}}
+        <br>
+        <div>
+            <b>Fuel_economy</b>
+        </div>
+        <div>
+            {{#with fuel_economy}}
+            <li>City - {{city}}</li>
+            <li>Highway - {{highway}}</li>
+            <li>Combined - {{combined}}</li>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            <b>Price</b>
+        </div>
+        <div>
+            {{#with price}}
+            <li>Base - {{base}}</li>
+            <li>Destination - {{destination}}</li>
+            <div>
+                <br>
+                <b>Options</b>
+                {{#with options}}
+                <li>Navigation - {{navigation}}</li>
+                <li>Moonroof - {{moonroof}}</li>
+                <li>Premium_paint - {{premium_paint}}</li>
+                {{/with}}
+            </div>
+            <em>
+                <h2>Total: {{total}}</h2>
+            </em>
+            {{/with}}
+        </div>
+    </div>
+</div>
+
+
+</div>
