@@ -1,0 +1,80 @@
+<div>
+    <div>
+        <h1><em>{{name}}</em></h1>
+    </div>
+    <hr>
+    <div>
+        <p><b>{{name}} - </b> <em>{{description}}</em></p>
+    </div>
+    <div>
+        <p>Price - {{price}}</p>
+    </div>
+
+    <div>
+        <p><b>{{category}}</b></p>
+        {{#with features}}
+        {{#with processor}}
+        Processor - {{brand}}, {{model}},{{speed}},{{cores}}, {{cache}}
+        {{/with}}
+        <div>
+            {{#with memory}}
+            Memory - {{type}}, {{size}}, {{speed}}
+            {{/with}}
+        </div>
+        <div>
+            {{#with storage}}
+            Storage - {{type}}, {{size}}
+            {{/with}}
+        </div>
+        <div>
+            {{#with display}}
+            Display - {{size}}, {{resolution}}, {{technology}}, {{color_space}}, {{brightness}}, {{refresh_rate}}
+            {{/with}}
+        </div>
+        <div>
+            {{#with graphics}}
+            Graphics - {{brand}}, {{model}}, {{memory}}
+            {{/with}}
+        </div>
+        <div>
+            {{#each ports}}
+            <li>Ports-{{type}}, {{count}}</li>
+            <ul>
+                {{#each features}}
+                <li>
+                    {{this}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </div>
+        <div>
+            {{#with battery}}
+            Battery - {{type}}, {{capacity}}, {{life}}
+            {{/with}}
+        </div>
+        <div>
+            <p>Weitght - {{weight}}</p>
+        </div>
+        <div>
+            {{#with dimensions}}
+            <span>Dimensions:</span>
+            <li>height - {{height}}</li>
+            <li>width - {{width}}</li>
+            <li>depth - {{depth}}</li>
+            {{/with}}
+        </div>
+        <div>
+            <p>Operating_system - {{operating_system}}</p>
+        </div>
+        <div>
+            <span>Accessories:</span>
+        </div>
+        <div>
+            {{#each accessories}}
+            <li>{{name}} - {{price}}</li>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+</div>
