@@ -693,6 +693,7 @@ router.get('/task22', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
+    layout: 'basic',
     page_header: {
       title: 'InnovaMind',
       description: 'Welcome to our wonderful community',
@@ -746,7 +747,6 @@ router.get('/task22', function (req, res) {
 })
 
 // ================================================================
-
 // ================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router
