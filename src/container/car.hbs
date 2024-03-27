@@ -1,0 +1,209 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+        <div>
+            <h1>{{make}} {{model}}</h1>
+        </div>
+        <div>
+            <p><b>{{year}}<em>year</em>, {{color}}</b></p>
+        </div>
+        <hr>
+        <div>
+            {{#with features}}
+            <div>
+                {{#with interior}}
+                <p>
+                <h5><em>Interior</em></h5>
+                </p>
+                <div>
+
+                    {{#with seats}}
+                    <span><b>Seats</b> - {{material}}, {{color}},</span>
+                    {{#if heated}} heated
+                    {{/if}}
+                    {{#if ventilated}} end ventilate
+                    {{/if}}
+                    {{/with}}
+                </div>
+                <div>
+                    {{#with dashboard}}
+                    <b>Dashboard</b> - {{material}}, {{color}}
+                    <div>
+                        {{#with display}}
+                        <span><b>Display</b> - {{type}}-{{size}}, {{resolution}}</span>
+                        {{#if touchscreen}}
+                        touchscreen
+                        {{/if}}
+                        {{/with}}
+                    </div>
+                    {{/with}}
+                </div>
+                <div>
+                    {{#with audio}}
+                    <b>Audio</b> - {{system}}, <span>{{speakers}}-speakers,</span>
+                    {{#if subwoofer}}
+                    <span>subwoofer,</span>
+                    {{/if}}
+                    {{#if bluetooth}}
+                    <span>bluetooth,</span>
+                    {{/if}}
+                    {{#if USB}}
+                    <span>USB,</span>
+                    {{/if}}
+                    {{/with}}
+                </div>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                <h5><em>Exterior</em></h5>
+            </div>
+            <div>
+                {{#with exterior}}
+                {{#with wheels}}
+                <span><b> Wheels</b> - {{size}}, {{type}}, {{color}}</span>
+                {{/with}}
+                <div>
+                    {{#with headlights}}
+                    <span><b> Headlights</b> - {{type}}, {{brightness}},</span>
+                    {{#if automatic}}
+                    <span>automatic,</span>
+                    {{/if}}
+                    {{/with}}
+                    <div>
+                        {{#with sunroof}}
+                        <span><b>Sunroof</b> - {{type}}, {{size}},</span>
+                        {{#if automatic}}
+                        <span>automatic,</span>
+                        {{/if}}
+                        {{/with}}
+                    </div>
+                    {{/with}}
+                </div>
+                <br>
+                <div>
+                    <h5><em>Safety</em></h5>
+                </div>
+                <div>
+                    <b>Airbags:</b>
+
+                    {{#with safety}}
+                    <ul>
+                        {{#with airbags}}
+                        <li><span>Front</span> - {{front}}</li>
+                        <li><span>Side</span> - {{side}}</li>
+                        <li><span>Knee</span> - {{knee}}</li>
+                        <li><span>Rear</span> - {{rear}}</li>
+                        {{/with}}
+                    </ul>
+                    <div>
+                        <h5><em><ins>Assistance</ins></em></h5>
+                    </div>
+                    <div>
+                        {{#with assistance}}
+                        <div>
+                            {{#if blind_spot_monitoring}}
+                            <span><b>blind_spot_monitoring</b> - в наявності</span>
+                            {{/if}}
+                        </div>
+
+                        <div>
+                            {{#if rear_cross_traffic_alert}}
+                            <span><b>rear_cross_traffic_alert</b> - в наявності</span>
+                            {{/if}}
+                        </div>
+                        <div>
+                            {{#if lane_departure_warning}}
+                            <span><b>lane_departure_warning</b> - в наявності</span>
+                            {{/if}}
+                        </div>
+                        <div>
+                            {{#if adaptive_cruise_control}}
+                            <span><b>adaptive_cruise_control</b> - в наявності</span>
+                            {{/if}}
+                        </div>
+                        <div>
+                            {{#if collision_warning}}
+                            <span><b>collision_warning</b> - в наявності</span>
+                            {{/if}}
+                        </div>
+                        {{/with}}
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+            <br>
+            <div>
+                <h5><em><ins>Engine</ins></em></h5>
+            </div>
+            <div>
+
+                {{#with engine}}
+                <ul>
+                    <li><span>Type</span> - {{type}}</li>
+                    <li><span>Displacement</span> - {{displacement}}</li>
+                    <li><span>Horsepower</span> - {{horsepower}}</li>
+                    <li><span>Torque</span> - {{torque}}</li>
+                </ul>
+                <div>
+                    {{#with transmission}}
+                    <span><b>Transmission</b> - {{type}}, {{gears}} gears</span>
+                    {{/with}}
+                </div>
+                {{/with}}
+                <br>
+                <div>
+                    <h5><em><ins>Engine</ins></em></h5>
+                </div>
+                <div>
+                    {{#with fuel_economy}}
+                    <ul>
+                        <li><span><b>City</b> - {{city}}</span></li>
+                        <li><span><b>Highway</b> - {{highway}}</span></li>
+                        <li><span><b>Combined</b> - {{combined}}</span></li>
+                    </ul>
+                    {{/with}}
+                </div>
+                <div>
+                    <h5><em><ins>Price</ins></em></h5>
+                </div>
+                <div>
+                    {{#with price}}
+                    <ul>
+                        <li><span><b>Base</b> - {{base}}</span></li>
+                        <li><span><b>Destination</b> - {{destination}}</span></li>
+                    </ul>
+                    <div>
+                        <h5><em><ins>Options</ins></em></h5>
+                    </div>
+                    <div>
+                        {{#with options}}
+                        <ul>
+                            <li><span><b>Navigation</b> - {{navigation}}</span></li>
+                            <li><span><b>Moonroof</b> - {{moonroof}}</span></li>
+                            <li><span><b>Premium_paint</b> - {{premium_paint}}</span></li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                    <hr>
+                    <div>
+                        <h4><em><mark>Total -{{total}}</mark></em></h4>
+                    </div>
+                    {{/with}}
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
