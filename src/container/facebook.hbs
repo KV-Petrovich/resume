@@ -1,0 +1,117 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+        <h1><span class="badge text-bg-primary">{{name}}</span></h1>
+        <div>
+            <ul>
+                {{#each users}}
+                <li><span class="badge rounded-pill text-bg-success">{{id}}</span> - {{name}} {{gender}} {{age}}</li>
+                <div>
+                    <b><ins>Friends</ins></b>
+                    <div>
+                        <ul>
+                            {{#each friends}}
+                            <li><span class="badge rounded-pill text-bg-warning">{{id}}</span> - {{name}} {{gender}}
+                                {{age}}</li>
+                            <div>
+                                <div>
+                                    <b><ins>Mutual_friends</ins></b>
+                                </div>
+                                <ul>
+                                    {{#each mutual_friends}}
+                                    <li><span class="badge rounded-pill text-bg-info">{{id}}</span> - {{name}}
+                                        {{gender}}
+                                        {{age}}</li>
+                                    <div>
+
+                                        <ul>
+                                            {{#each mutual_friends}}
+                                            <b><ins>Mutual_friends</ins></b>
+                                            <li><span class="badge rounded-pill text-bg-info">{{id}}</span> - {{name}}
+                                                {{gender}}
+                                                {{age}}</li>
+                                            {{/each}}
+                                        </ul>
+
+                                    </div>
+                                    {{/each}}
+                                </ul>
+                            </div>
+
+                            <div>
+                                <ul>
+                                    {{#each groups}}
+                                    <div>
+                                        <b><ins>Groups</ins></b>
+                                    </div>
+
+                                    <li><span class="badge rounded-pill text-bg-danger">{{id}}</span> - {{name}}
+                                    </li>
+                                    <li>{{description}}</li>
+                                    <div>
+                                        <div>
+                                            <b><ins>Members</ins></b>
+                                        </div>
+                                        <ul>
+                                            {{#each members}}
+                                            <li><span class="badge rounded-pill text-bg-info">{{id}}</span> - {{name}}
+                                                {{gender}}
+                                                {{age}}</li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                    {{/each}}
+                                </ul>
+                            </div>
+
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            {{#each groups}}
+                            <div>
+                                <b><ins>Groups</ins></b>
+                            </div>
+
+                            <li><span class="badge rounded-pill text-bg-danger">{{id}}</span> - {{name}}
+                            </li>
+                            <li>{{description}}</li>
+                            <div>
+                                <div>
+                                    <b><ins>Members</ins></b>
+                                </div>
+                                <ul>
+                                    {{#each members}}
+                                    <li><span class="badge rounded-pill text-bg-info">{{id}}</span> - {{name}}
+                                        {{gender}}
+                                        {{age}}</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+
+
+
+                            {{/each}}
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                {{/each}}
+            </ul>
+
+        </div>
+    </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
