@@ -1,0 +1,131 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <section class="card">
+        <div class="card">
+            <div class="card-body">
+                {{#with heading}}
+                {{#with main}}
+                <h1>{{title}}</h1>
+                <div>
+                    <p>{{text}}</p>
+                </div>
+                {{#with button_text}}
+                <div>
+                    <button type="button" class="btn btn-primary btn-sm">{{solid}}</button>
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-outline-primary btn-lg">{{outline}}</button>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+        {{/with}}
+        <br>
+        <div class="card">
+            <div class="card-body">
+                {{#with second}}
+                <h2>{{title}}</h2>
+                <div>
+                    <p>{{text}}</p>
+                </div>
+                {{#with button_text}}
+                <div>
+                    <button class="btn btn-secondary">{{solid}}</button>
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-outline-secondary">{{outline}}</button>
+                </div>
+                {{/with}}
+                {{/with}}
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                {{#with subblock}}
+                <h2>{{title}}</h2>
+                <div>
+                    <p>{{text}}</p>
+                </div>
+                {{#with button_text}}
+                <div>
+                    <button class="btn btn-dark btn-sm">{{solid}}</button>
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-outline-dark btn-sm">{{outline}}</button>
+                </div>
+                {{/with}}
+                {{/with}}
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <br>
+    <section class="card">
+        <div class="card-body">
+            {{#with nested_display}}
+            <div class="display-1">
+                {{title}}
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    {{#with children_display}}
+                    <div class="display-4">{{title}}</div>
+                    <div>
+                        <p>{{text}}</p>
+                    </div>
+                    {{#with button}}
+                    <button type="button" class="btn btn-outline-warning">{{text}}</button>
+                    {{/with}}
+                    {{/with}}
+                </div>
+            </div>
+            <div>
+                <h6>{{header_text}}</h6>
+            </div>
+            <div>
+                <button type="button" class="btn btn-info btn-sm">{{button.text}}</button>
+            </div>
+            {{/with}}
+        </div>
+    </section>
+    <br>
+    <section class="card">
+        <div class="card-body">
+            {{#with paragraph}}
+            <p class="text-uppercase">{{title}}</p>
+            <p class="text-lowercase">{{text}}</p>
+            <div>
+                {{#with button}}
+                <a href="{{url}}" class="btn btn-link" target="_blank">{{text}}</a>
+                {{/with}}
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        {{#each list_name}}
+                        <li>
+                            <a href="{{url}}" class="btn btn-link" target="_blank">{{text}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+
+            </div>
+            {{/with}}
+        </div>
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
