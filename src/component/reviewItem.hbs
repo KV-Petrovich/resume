@@ -1,0 +1,76 @@
+<div class="ms-3">
+    {{#each reviewList}}
+    <div class="card mt-4">
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{#with title}}
+                    <div>
+                        <b>{{userName}}</b>
+                    </div>
+                    <div>
+                        <p>{{caption}}</p>
+                    </div>
+                    <p>{{date}}</p>
+                    {{/with}}
+                </li>
+
+                <div>
+                    {{#with reviewBody}}
+                    <li class="list-group-item">
+                        <div>
+                            {{#with seller}}
+                            <p>{{title}}: {{value}}</p>
+                            {{/with}}
+                        </div>
+                        <div>
+                            {{#with rating}}
+                            <p>{{title}}: {{value}}</p>
+                            {{/with}}
+                        </div>
+                        <div>
+                            {{#each text}}
+                            <p>{{this}}</p>
+                            {{/each}}
+                        </div>
+                        <div>
+                            {{#with advantages}}
+                            <div>
+                                <b>{{title}}:</b>
+                            </div>
+                            <div>
+                                <p>{{text}}</p>
+                            </div>
+                            {{/with}}
+                        </div>
+                        <div>
+                            {{#with disadvantages}}
+                            <b>{{title}}</b>
+                            <p>{{text}}</p>
+                            {{/with}}
+                        </div>
+                        <div>
+                            {{#each images}}
+                            <img src="{{this}}" alt="foto">
+                            {{/each}}
+                        </div>
+                    </li>
+                    <div>
+                        {{#each coments}}
+                        <ul class="list-group mt-4 ps-5">
+                            <li class="list-group-item">
+                                <p><b>{{userName}}</b></p>
+                                <p>{{date}}</p>
+                                <span>{{text}}</span>
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+                </div>
+            </ul>
+        </div>
+    </div>
+    {{/each}}
+</div>
