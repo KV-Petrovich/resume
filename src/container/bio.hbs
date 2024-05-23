@@ -3,79 +3,87 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
-    <main>
+<div class="row col-12">
+    <main class="pt-3">
         <h2><ins>{{name}}</ins></h2>
 
         <div><b>Birthdate</b> - {{birthdate}}. {{birthplace}}</div>
         <div><b>Deathdate</b> - {{deathdate}}. {{deathplace}}</div>
         <div><b>Nationality</b>: {{nationality}}</div>
     </main>
-    <hr>
+    <div class="m-2">
+        <hr>
+    </div>
 
-    <body>
-        <div><b>Occupation</b> -
-            {{occupation}}
-            <ul>
-                {{#each known_for}}
-                <li>{{this}}</li>
+    <div class="ms-4">
+
+        <body>
+            <div><b>Occupation</b> -
+                {{occupation}}
+                <ul>
+                    {{#each known_for}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div>
+                {{#each education}}
+                <b>Education</b> - {{degree}}, {{field}}, {{institution}} {{year}}
                 {{/each}}
-            </ul>
-        </div>
-        <div>
-            {{#each education}}
-            <b>Education</b> - {{degree}}, {{field}}, {{institution}} {{year}}
-            {{/each}}
-        </div>
-        <div>
-            <h4> Notable publications</h4>
-            <ol>
-                {{#each notable_publications}}
-                <li>{{title}}, {{year}}. {{publisher}}</li>
+            </div>
+            <div>
+                <h4> Notable publications</h4>
+                <ol>
+                    {{#each notable_publications}}
+                    <li>{{title}}, {{year}}. {{publisher}}</li>
+                    {{/each}}
+                </ol>
+            </div>
+            <div>
+                <h4>Partners</h4>
+                <ul>
+                    {{#each partners}}
+                    <li>{{name}}, {{relationship}}, {{years}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div>
+                <h4>Awards</h4>
+                {{#each awards}}
+                <b><ins>{{title}}, {{year}}</ins> - </b>
+                <em>{{description}}</em>
                 {{/each}}
-            </ol>
-        </div>
-        <div>
-            <h4>Partners</h4>
-            <ul>
-                {{#each partners}}
-                <li>{{name}}, {{relationship}}, {{years}}</li>
-                {{/each}}
-            </ul>
-        </div>
-        <div>
-            <h4>Awards</h4>
-            {{#each awards}}
-            <b><ins>{{title}}, {{year}}</ins> - </b>
-            <em>{{description}}</em>
-            {{/each}}
-        </div>
-        <div>
-            <h4>Influences</h4>
-            <ol>
-                {{#each influences}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ol>
-        </div>
-        <div>
-            <h4>Influenced</h4>
-            <ol>
-                {{#each influenced}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ol>
-        </div>
-        <div>
-            <h4>Quotes</h4>
-            <ul>
-                {{#each quotes}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </div>
-    </body>
-    <hr>
+            </div>
+            <div>
+                <h4>Influences</h4>
+                <ol>
+                    {{#each influences}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ol>
+            </div>
+            <div>
+                <h4>Influenced</h4>
+                <ol>
+                    {{#each influenced}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ol>
+            </div>
+            <div>
+                <h4>Quotes</h4>
+                <ul>
+                    {{#each quotes}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </body>
+    </div>
+
+    <div class="m-2">
+        <hr>
+    </div>
     <footer>
         <div>
             <h3>Major_discoveries</h3>
